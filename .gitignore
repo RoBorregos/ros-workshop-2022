@@ -1,0 +1,16 @@
+#Folders and files to ignore
+__ignore__/
+*.pyc
+
+### ROS ###
+/catkin_ws/devel/
+/catkin_ws/devel_isolated/
+/catkin_ws/logs/
+/catkin_ws/build/
+/catkin_ws/build_isolated/
+/catkin_ws/bin/
+/catkin_ws/install/
+/catkin_ws/.catkin_tools/
+/catkin_ws/.catkin_workspace
+/catkin_ws/src/ExternalPackages/
+/catkin_ws/src/.rosinstall.bak
