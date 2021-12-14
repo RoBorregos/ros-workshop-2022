@@ -26,10 +26,10 @@
 * Github Repository
     ```bash
     # Cloning with HTTP
-    git clone https://github.com/RoBorregos/ros-workshop-2022.git
+    git clone --recurse-submodules https://github.com/RoBorregos/ros-workshop-2022.git
 
     # Cloning with SSH
-    git clone git@github.com:RoBorregos/ros-workshop-2022.git
+    git clone --recurse-submodules git@github.com:RoBorregos/ros-workshop-2022.git
 
     # Moving into the repo
     cd ros-workshop-2022
