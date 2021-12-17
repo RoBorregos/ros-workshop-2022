@@ -1,0 +1,4 @@
+<launch>
+    <node name="ActionServerPy" pkg="py_tutorials" type="action_server.py" output="screen" />
+    <node name="ActionClientPy" pkg="py_tutorials" type="action_client.py" output="screen" />
+</launch>
