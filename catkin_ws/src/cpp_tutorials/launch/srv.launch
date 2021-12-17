@@ -1,0 +1,8 @@
+<launch>
+    <node name="SrvServerCpp" pkg="cpp_tutorials" type="srv_server" output="screen" />
+    <!-- <node name="SrvClientCpp" pkg="cpp_tutorials" type="srv_client" output="screen" args="10 -2" /> -->
+    <node name="SrvClientCpp" pkg="cpp_tutorials" type="srv_client" output="screen">
+        <param name="x_value" value="10" />
+        <param name="y_value" value="-2" />
+    </node>
+</launch>
