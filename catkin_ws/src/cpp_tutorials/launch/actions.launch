@@ -1,0 +1,4 @@
+<launch>
+    <node name="ActionServerCpp" pkg="cpp_tutorials" type="action_server" output="screen" />
+    <node name="ActionClientCpp" pkg="cpp_tutorials" type="action_client" output="screen" />
+</launch>

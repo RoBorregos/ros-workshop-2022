@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   genmsg
+  actionlib
+  actionlib_msgs
   py_tutorials
 )
 
@@ -142,6 +144,23 @@ add_dependencies(talker cpp_tutorials_generate_messages_cpp py_tutorials_generat
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 add_dependencies(listener cpp_tutorials_generate_messages_cpp py_tutorials_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+
+add_executable(srv_client src/srv_client.cpp)
+target_link_libraries(srv_client ${catkin_LIBRARIES})
+add_dependencies(srv_client cpp_tutorials_generate_messages_cpp py_tutorials_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+
+add_executable(srv_server src/srv_server.cpp)
+target_link_libraries(srv_server ${catkin_LIBRARIES})
+add_dependencies(srv_server cpp_tutorials_generate_messages_cpp py_tutorials_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+
+add_executable(action_client src/action_client.cpp)
+target_link_libraries(action_client ${catkin_LIBRARIES})
+add_dependencies(action_client cpp_tutorials_generate_messages_cpp py_tutorials_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+
+add_executable(action_server src/action_server.cpp)
+target_link_libraries(action_server ${catkin_LIBRARIES})
+add_dependencies(action_server cpp_tutorials_generate_messages_cpp py_tutorials_generate_messages_cpp ${catkin_EXPORTED_TARGETS})
+
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
