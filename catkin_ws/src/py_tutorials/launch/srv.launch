@@ -1,0 +1,8 @@
+<launch>
+    <node name="SrvServerPy" pkg="py_tutorials" type="srv_server.py" output="screen" />
+    <!-- <node name="SrvClientPy" pkg="py_tutorials" type="srv_client.py" output="screen" args="10 -2" /> -->
+    <node name="SrvClientPy" pkg="py_tutorials" type="srv_client.py" output="screen">
+        <param name="x_value" value="10" />
+        <param name="y_value" value="-2" />
+    </node>
+</launch>
