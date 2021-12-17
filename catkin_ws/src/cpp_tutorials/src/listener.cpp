@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "py_tutorials/ChatterAdvanced.h"
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
@@ -7,6 +8,11 @@
 void chatterCallback(const std_msgs::String::ConstPtr& msg)
 {
   ROS_INFO("I heard: [%s]", msg->data.c_str());
+}
+
+void chatterAdvancedCallback(const py_tutorials::ChatterAdvanced::ConstPtr& msg)
+{
+  ROS_INFO("I heard: [%.2f] [%s]", msg->dataFloat, msg->dataString.c_str());
 }
 
 int main(int argc, char **argv)
@@ -46,6 +52,7 @@ int main(int argc, char **argv)
    * away the oldest ones.
    */
   ros::Subscriber sub = n.subscribe("chatter", 1000, chatterCallback);
+  ros::Subscriber subAdvanced = n.subscribe("chatterAdvanced", 1000, chatterAdvancedCallback);
 
   /**
    * ros::spin() will enter a loop, pumping callbacks.  With this version, all

@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 import rospy
 from std_msgs.msg import String
+from py_tutorials.msg import ChatterAdvanced
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + " I heard %s", data.data)
+
+def callbackAdvanced(data):
+    rospy.loginfo(rospy.get_caller_id() + " I heard %s", data)
     
 def listener():
 
@@ -15,6 +19,7 @@ def listener():
     rospy.init_node('listener', anonymous=True)
 
     rospy.Subscriber("chatter", String, callback)
+    rospy.Subscriber("chatterAdvanced", ChatterAdvanced, callbackAdvanced)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

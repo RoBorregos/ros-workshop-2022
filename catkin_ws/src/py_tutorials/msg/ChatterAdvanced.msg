@@ -1,0 +1,2 @@
+float32 dataFloat
+string dataString

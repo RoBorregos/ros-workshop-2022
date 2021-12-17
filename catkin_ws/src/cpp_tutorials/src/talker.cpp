@@ -1,5 +1,6 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
+#include "py_tutorials/ChatterAdvanced.h"
 
 #include <sstream>
 
@@ -45,6 +46,7 @@ int main(int argc, char **argv)
    * buffer up before throwing some away.
    */
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
+  ros::Publisher chatterAdvanced_pub = n.advertise<py_tutorials::ChatterAdvanced>("chatterAdvanced", 1000);
 
   ros::Rate loop_rate(10);
 
@@ -59,7 +61,7 @@ int main(int argc, char **argv)
     ss << "hello world " << ros::Time::now();
     msg.data = ss.str();
 
-    ROS_INFO("%s", msg.data.c_str());
+    // ROS_INFO("%s", msg.data.c_str());
 
     /**
      * The publish() function is how you send messages. The parameter
@@ -68,6 +70,10 @@ int main(int argc, char **argv)
      * in the constructor above.
      */
     chatter_pub.publish(msg);
+    py_tutorials::ChatterAdvanced msgAdvanced;
+    msgAdvanced.dataFloat = 2.2;
+    msgAdvanced.dataString = ss.str();
+    chatterAdvanced_pub.publish(msgAdvanced);
 
     ros::spinOnce();
 
